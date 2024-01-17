@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="the_good">The Good</string>
+    <string name="the_bad">The Bad</string>
+    <string name="the_ugly">The Ugly</string>
+</resources>
