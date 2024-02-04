@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Parcel Demo</string>
+    <string name="user_details">User Details</string>
+    <string name="enter_name">Enter name</string>
+    <string name="submit">Submit</string>
+    <string name="enter_age">Enter age</string>
+    <string name="enter_email">Enter email</string>
+</resources>
