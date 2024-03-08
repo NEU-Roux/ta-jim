@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:gravity="center_vertical">
+
+    <!-- TextView for the Post Title -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Post Title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical" />
+
+    <!-- ImageView for the Post Image, directly to the right of the title -->
+    <ImageView
+        android:id="@+id/imageUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/placeholder"
+        android:contentDescription="@string/a_post_image"
+        android:scaleType="centerCrop"/>
+
+</LinearLayout>

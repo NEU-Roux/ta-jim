@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextPostTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Title"
+        android:inputType="text"
+        android:autofillHints="title hint" />
+
+    <EditText
+        android:id="@+id/editTextPostBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Body Text"
+        android:inputType="textMultiLine"
+        android:autofillHints="body text" />
+
+    <ImageView
+        android:id="@+id/imageViewPostImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="post image"
+        android:src="@drawable/placeholder" />
+
+    <Button
+        android:id="@+id/buttonPickImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pick Image"/>
+
+    <Button
+        android:id="@+id/buttonSubmitPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="submit"/>
+</LinearLayout>

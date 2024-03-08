@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "90790117051",
+    "project_id": "fir-demo-f74d8",
+    "storage_bucket": "fir-demo-f74d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90790117051:android:8f4c485fdcfbebab1af39e",
+        "android_client_info": {
+          "package_name": "edu.northeastern.firebasedemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCanAEDjq40kQseit80GsiqrBkCe6YHPZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

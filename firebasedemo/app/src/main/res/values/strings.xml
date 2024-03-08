@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">firebase-demo</string>
+    <string name="a_post_image">a post image</string>
+    <string name="create_post_button">create post button</string>
+</resources>
