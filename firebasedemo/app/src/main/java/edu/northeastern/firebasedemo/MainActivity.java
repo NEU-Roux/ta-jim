@@ -150,13 +150,12 @@ public class MainActivity extends AppCompatActivity implements PostAdapter.OnPos
         String postTitle = titleEditText.getText().toString().trim();
         String postBody = bodyEditText.getText().toString().trim();
 
-        if (postTitle.isEmpty() || postBody.isEmpty()) {
-            Toast.makeText(MainActivity.this, "Please enter all the details", Toast.LENGTH_SHORT).show();
-        } else if (imageUri != null) {
-            uploadImageToFirebaseStorage(postTitle, postBody, dialog); // If an image has been uploaded, call the uploadImageToFirebaseStorage method.
-        } else {
-            savePost(postTitle, postBody, null, dialog);
-        }
+        // Here I want to make sure the user has entered a title and body, and if an image has been uploaded.
+        // If all the required fields are present, I call the uploadImageToFirebaseStorage method.
+        // If the user has not uploaded an image, I call the savePost method directly.
+
+        // I did a lot of the work for you here, but you need to implement the logic for when the user has not uploaded an image.
+        // Please examine all the code for uploading an image to Firebase Storage, and then implement the logic for when the user has not uploaded an image.
     }
 
     // A method to upload the image to Firebase Storage.
@@ -178,14 +177,14 @@ public class MainActivity extends AppCompatActivity implements PostAdapter.OnPos
             return fileReference.getDownloadUrl();
 
         }).addOnCompleteListener(task -> {
-            // If the upload is successful, get the download URL and call the savePost method with the title, body, and imageUrl as arguments.
-            if (task.isSuccessful()) {
-                Uri downloadUri = task.getResult();
-                String imageUrl = downloadUri.toString();
-                savePost(title, body, imageUrl, dialog);
-            } else {
-                Toast.makeText(MainActivity.this, "Upload failed: " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
-            }
+                // If the upload is successful, get the download URL and call the savePost method with the title, body, and imageUrl as arguments.
+                if (task.isSuccessful()) {
+                    Uri downloadUri = task.getResult();
+                    String imageUrl = downloadUri.toString();
+                    savePost(title, body, imageUrl, dialog);
+                } else {
+                    Toast.makeText(MainActivity.this, "Upload failed: " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                }
         });
     }
 
@@ -255,13 +254,14 @@ public class MainActivity extends AppCompatActivity implements PostAdapter.OnPos
     // This is nice for the user, as it lets them know they are logged in, and it's also useful for debugging.
     private void updateWelcomeText() {
         TextView textUniqueUser = findViewById(R.id.textUniqueUser);
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (currentUser != null) {
-            String email = currentUser.getEmail();
-            textUniqueUser.setText(email);
-        } else {
-            textUniqueUser.setText("");
-        }
+        // Finish the implementation of the updateWelcomeText method
+        // to do so you will need to get the current user from FirebaseAuth and set the text of the textUniqueUser TextView to the user's email.
+        // If the user is not logged in, set the text to an empty string.
+        // although they should not be able to access this activity if they are not logged in.
+        // See the below documentation for more information on how to get the current user.
+        // https://firebase.google.com/docs/auth/android/manage-users
+
+
     }
 
     // Load posts from the Firestore database in order of their age (newest first).

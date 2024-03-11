@@ -36,18 +36,11 @@ public class LoginActivity extends AppCompatActivity {
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(LoginActivity.this, "Please enter all the details", Toast.LENGTH_SHORT).show();
             } else {
-                // Sign in the user with the email and password when the user clicks the login button
-                // Again, see the use of the FirebaseAuth instance to sign in the user
-                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
-                    }
-                });
+
+                // Use Firebase Authentication to sign in the user
+                // you can find how to do this in the documentation.
+                // https://firebase.google.com/docs/auth/android/password-auth
+                // keep in mind we will be logging in with a email and password.
             }
         });
 

@@ -51,23 +51,14 @@ public class RegisterActivity extends AppCompatActivity {
             } else if (!password.equals(confirmPassword)) {
                 Toast.makeText(RegisterActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
             } else {
-                // Create a new user with the email and password when the user clicks the register button
-                // See we are calling createUserWithEmailAndPassword on the FirebaseAuth instance
-                // This is an asynchronous operation, so we need to add a listener to handle the result
-                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        // notice we are not including the password in the user document
-                        // this is because it is really bad practice to store passwords in the database
-                        // even the hashed version of the password, if you can avoid it, you should.
-                        // Firebase Authentication handles the password for us, so we don't need to store it in the database
-                        createUserDocument(email); // Create a new user document in the Firestore database with the user's email
-                        Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        Toast.makeText(RegisterActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
-                    }
+                    https://firebase.google.com/docs/auth/web/password-auth
+                    // Take a look at the above documentation and finish this registration activity.
+                    // Upon successful registration, you should navigate to the login activity and include a success toast.
+                    // If the registration fails, you should display a toast message to the user.
+                    // Make use of on complete listener to check if the registration was successful or not.
+                    // You will also need to create a user document in the Firestore database.
+                    // There is a method called createUserDocument that you can use to do this.
+
                 });
             }
         });
