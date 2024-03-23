@@ -1,3 +1,0 @@
-edu.northeastern.sensors.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme
